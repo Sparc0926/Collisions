@@ -4,14 +4,14 @@
 static GLuint vboBlock[_BLOCK_CNT], vaoBlock[_BLOCK_CNT];
 static Block block[_BLOCK_CNT];
 
-void BeginBlock(void)
+void begin_block(void)
 {
     glGenBuffers(_BLOCK_CNT, vboBlock);
     glGenVertexArrays(_BLOCK_CNT, vaoBlock);
 }
 
 
-void AddBlock(int i, char x, char y, char w, char vel_x, char vel_y)
+void add_block(int i, char x, char y, char w, char vel_x, char vel_y)
 {
     for (int i = 0; i < _BLOCK_CNT; i++) {
         block[i].x = x;
@@ -22,7 +22,7 @@ void AddBlock(int i, char x, char y, char w, char vel_x, char vel_y)
     }
 }
 
-void UpdateBlock(void)
+void update_block(void)
 {
     for (int i = 0; i < _BLOCK_CNT; i++) {
         block[i].x += block[i].vel_x;
@@ -34,7 +34,7 @@ void UpdateBlock(void)
     }
 }
 
-void DrawBlock(void)
+void draw_block(void)
 {
     for (int i = 0; i < _BLOCK_CNT; i++) {
         unsigned char blockAttrib[8] = {
@@ -52,7 +52,7 @@ void DrawBlock(void)
     }
 }
 
-void EndBlock(void)
+void end_block(void)
 {
     glDeleteBuffers(_BLOCK_CNT, vboBlock);
     glDeleteVertexArrays(_BLOCK_CNT, vaoBlock);

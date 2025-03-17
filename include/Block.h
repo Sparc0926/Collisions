@@ -12,12 +12,12 @@ struct Block {
     float mass, vel_x, vel_y;
 };
 
-void BeginBlock(void);
+void begin_block(void);
 
-void AddBlock(int i, char x, char y, char w, char vel_x, char vel_y);
-void DrawBlock(void);
-void UpdateBlock(void);
+void add_block(int i, char x, char y, char w, char vel_x, char vel_y);
+void draw_block(void);
+void update_block(void);
 
-void EndBlock(void);
+void end_block(void);
 
 #endif//BLOCK_H
